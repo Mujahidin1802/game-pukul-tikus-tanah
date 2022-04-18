@@ -1,0 +1,101 @@
+body {
+  background-color: rgb(251, 149, 23);
+  background-image: url(img/topographic-pattern.5f702fc6.png);
+}
+
+h1,
+h2 {
+  font-size: 60px;
+  text-align: center;
+  margin: 10px;
+  font-family: "Gloria Hallelujah", cursive;
+  font-weight: bold;
+}
+
+button {
+  display: block;
+  margin: auto;
+  background-color: rgba(165, 42, 42, 0.911);
+  border-radius: 5px;
+  color: white;
+  padding: auto 6px;
+  font-size: 28px;
+  font-family: "Gloria Hallelujah", cursive;
+}
+.papan-skor {
+  font-family: "Concert One", cursive;
+}
+.container {
+  width: 600px;
+  margin: auto;
+  cursor: url(../img/palu1.png), auto;
+}
+
+.container:active {
+  cursor: url(../img/palu2.png), auto;
+}
+
+.tanah {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  float: left;
+}
+
+.tanah::after {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 100px;
+  background: url(../img/tanah.png) bottom center no-repeat;
+  background-size: 80%;
+  position: absolute;
+  bottom: -25px;
+}
+
+.tikus {
+  width: 100%;
+  height: 100%;
+  background: url(../img/tikus.png) bottom center no-repeat;
+  background-size: 60%;
+  position: absolute;
+  top: 100px;
+  transition: top 0.3s;
+}
+
+.tanah.muncul .tikus {
+  top: -15px;
+}
+
+@media screen and (max-width: 376px) {
+  h1,
+  h2 {
+    font-size: 28px;
+    margin: 5px;
+  }
+
+  button {
+    padding: auto 3px;
+    font-size: 15px;
+  }
+  .container {
+    width: 320px;
+  }
+  .tanah {
+    width: 105px;
+    height: 105px;
+  }
+
+  .tanah::after {
+    width: 105px;
+    height: 200px;
+  }
+  .tikus {
+    background-size: 40%;
+  }
+
+  .tanah.muncul .tikus {
+    top: 0;
+  }
+}
